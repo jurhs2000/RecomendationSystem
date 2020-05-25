@@ -1,0 +1,12 @@
+Instrucciones para dumpear la base de datos:
+1. Parar la base de datos y abrirla en terminal desde la aplicación de Neo4j
+2. Dirigirse a la carpeta bin > cd bin
+3. Iniciar la base de datos > neo4j console
+4. Pasado un momento, parar la base de datos con Ctrl+C (¿Por qué?, no sé, pero si no da un error)
+5. Ejecutar el comando para guardar en el escritorio > neo4j-admin dump --database=neo4j --to=C:/Users/"tu usuario"/Desktop/
+
+Instrucciones para cargar la base de datos:
+1. Crear una nueva base de datos.
+2. Abrirla en terminal desde la aplicación de Neo4j
+3. Dirigirse a la carpeta bin > cd bin
+4. Ejecutar el comando > neo4j-admin load --from=C:/Users/"tu usuario"/Desktop/neo4j.dump --database=neo4j --force
