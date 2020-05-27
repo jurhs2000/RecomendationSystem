@@ -1,2 +1,6 @@
-# created by virtualenv automatically
-*
+# Evitar los archivos del virtualenv
+__pycache__/
+Lib/
+Scripts/
+Scripts/*
+pyvenv.cfg 

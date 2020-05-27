@@ -1,0 +1,43 @@
+Para correr este servidor es recomendable instalar un entorno virtual.
+Con virtualenv de python.
+*(Si encuentras problemas (o hueva) no uses el entorno virtual,
+y ve al paso 4, simplemente se instalaran los requisitos
+en tu version global de python y no en el entorno virtual)*
+
+1. Para ello instalaremos virtual env de manera global con:
+	>pip install virtualenv
+
+2. Luego, dentro de una terminal en esta carpeta ejecutar:
+	>py -m virtualenv ./
+
+	*(py o python segun la variable instalada)*
+
+3. Al acabar. Tendras el entorno virtual en la carpeta.
+Para acceder a el ejecuta desde esta carpeta:
+	>.\Scripts\activate
+	o
+	>source Scripts/activate
+	o
+	>source bin/activate
+	*(si usas linux o mac)*
+
+	*(Si se ha realizado correctamente veras entre parentesis el
+	nombre de la carpeta (FlaskServer), lo que significa que estas
+	dentro del entorno virtual y lo que instales solo se instalara aqui)*
+
+	*(Este paso varia segun el sistema operativo o la consola que uses.
+	Si tienes problemas, salta al siguiente paso, simplemente no usaras
+	el entorno virtual)*
+
+	Para salir del entorno virtual simplemente ejecuta el comando:
+	>deactivate
+
+4. Instala los requerimientos, dependiendo si estas usando o no el
+entorno virtual debes instalar los requerimientos con:
+	>pip install -r requirements.txt
+
+	*(esto instala los requerimentos indicados en el archivo)*
+
+5. Ejecuta el servidor. Ejecuta el arhicvo python principal:
+	>py Main.py
+

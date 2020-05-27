@@ -1,0 +1,13 @@
+.bg-primary {
+    background-color: rgb(255, 57, 35) !important;
+}
+
+.btn-outline-success {
+    color: white;
+    border-color: white;
+}
+
+.btn-outline-success:hover {
+    background-color: royalblue;
+    border-color: royalblue;
+}
