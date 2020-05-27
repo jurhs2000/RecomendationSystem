@@ -4,17 +4,25 @@
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for msg in messages %}
-                <p>{{msg}}</p>
+                <div class="alert alert-primary" role="alert">
+                    {{msg}}
+                </div>
             {% endfor %}
         {% endif %}
     {% endwith %}
 <form action="#" method="POST">
-    <p>Username:</p>
-    <p><input type="text" name="name" /></p>
-    <p>Password:</p>
-    <p><input type="password" name="password" /></p>
-    <p>Mantenerme conectado?</p>
-    <p><input type="checkbox" name="keep" value="isTrue" /></p>
-    <p><input type="submit" value="submit" /></p>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Username</label>
+        <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group form-check">
+        <input name="keep" value="isTrue" type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" value="submit" class="btn btn-primary">Submit</button>
 </form>
 {% endblock %}

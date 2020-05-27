@@ -1,24 +1,7 @@
 from json import dumps
 from flask import Flask, Response, request
 from Connection import *
-
-def serialize_movie(movie):
-    return {
-        'id': movie['id'],
-        'title': movie['title'],
-        'summary': movie['summary'],
-        'released': movie['released'],
-        'duration': movie['duration'],
-        'rated': movie['rated'],
-        'tagline': movie['tagline']
-    }
-
-def serialize_cast(cast):
-    return {
-        'name': cast[0],
-        'job': cast[1],
-        'role': cast[2]
-    }
+from Serialized_Models import *
 
 @app.route("/graph")
 def get_graph():
