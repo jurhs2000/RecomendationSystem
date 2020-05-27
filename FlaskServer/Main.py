@@ -9,13 +9,17 @@ app.secret_key = "laura ya no!"
 app.permanent_session_lifetime = timedelta(minutes=15) #it could be days="numero de dias"
 app.register_blueprint(logger, url_prefix="/session")
 
+@app.route("/home")
 @app.route("/")
+def get_home():
+    if "user" in session:
+        return render_template("home.html")
+    else:
+        return redirect(url_for("logger.login"))
+
+@app.route("/otro")
 def get_index():
     return app.send_static_file('index.html')
-
-@app.route("/home")
-def get_home():
-    return render_template("home.html")
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
