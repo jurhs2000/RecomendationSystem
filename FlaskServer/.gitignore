@@ -1,5 +1,2 @@
-# Evitar los archivos del virtualenv
-Lib/
-Scripts/
-Scripts/*
-pyvenv.cfg
+# created by virtualenv automatically
+*
