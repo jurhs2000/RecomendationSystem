@@ -1,4 +1,3 @@
-import os
 from flask import g
 from neo4j import GraphDatabase, basic_auth
 
