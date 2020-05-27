@@ -5,6 +5,20 @@ def serialize_user(user):
         "password": user.get("password")
     }
 
+def serialize_ingredient(ingredient):
+    return {
+        "name": ingredient.get("name"),
+        "tags": ingredient.get("tags")
+    }
+
+def serialize_meal(meal):
+    return {
+        "name": meal.get("name"),
+        "tags": meal.get("tags"),
+        "time": meal.get("time"),
+        "rate": meal.get("rate")
+    }
+
 def serialize_movie(movie):
     return {
         'id': movie['id'],
