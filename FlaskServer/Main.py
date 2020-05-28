@@ -18,10 +18,7 @@ app.register_blueprint(recomendations)
 @app.route("/home")
 @app.route("/")
 def get_home():
-    if "user" in session:
-        return render_template("home.html")
-    else:
-        return redirect(url_for("logger.login"))
+    return render_template("home.html")
 
 @app.route("/otro")
 def get_index():
