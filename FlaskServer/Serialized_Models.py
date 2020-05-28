@@ -2,7 +2,8 @@ def serialize_user(user):
     return {
         "name": user.get("name"),
         "username": user.get("username"),
-        "password": user.get("password")
+        "password": user.get("password"),
+        "ingredients": []
     }
 
 def serialize_ingredient(ingredient):

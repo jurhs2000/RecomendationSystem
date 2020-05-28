@@ -13,7 +13,7 @@ def login():
             session.permanent = False
         user = serialize_user(request.form)
         db = get_db()
-        results = db.run("MATCH (user:User {username:$username, password:$password})"
+        results = db.run("MATCH (user:USER {username:$username, password:$password})"
                         "RETURN user", {"username": user.get("username"), "password": user.get("password")})
         result = results.single()
         if result == None:
@@ -34,7 +34,7 @@ def register():
     if request.method == "POST":
         user = serialize_user(request.form)
         db = get_db()
-        results = db.run("CREATE (user:User {name:$name, username:$username, password:$password})"
+        results = db.run("CREATE (user:USER {name:$name, username:$username, password:$password})"
                         "RETURN user", {"name": user.get("name"), "username": user.get("username"),
                         "password": user.get("password")})
         result = results.single()
