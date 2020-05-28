@@ -9,7 +9,7 @@ from Recomendations import recomendations
 
 app = Flask(__name__, static_url_path='/static/')
 app.secret_key = "laura ya no!"
-app.permanent_session_lifetime = timedelta(minutes=15) #it could be days="numero de dias"
+app.permanent_session_lifetime = timedelta(minutes=60) #it could be days="numero de dias"
 app.register_blueprint(logger, url_prefix="/session")
 app.register_blueprint(ingredients)
 app.register_blueprint(meals)

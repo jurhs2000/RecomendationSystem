@@ -36,26 +36,38 @@
                 <div class="container">
                     <div class="container">
                         <h5 class="mt-4">Filter by</h5>
-                        <div class="row mb-2">
-                            <div class="col">
-                                <p class="mb-0">Taste</p>
-                                <select class="form-control">
-                                    <option>Default select</option>
-                                </select>
+                        <form action="{{ url_for('recomendations.filter') }}" method="POST">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <p class="mb-0">Taste</p>
+                                    <select name="taste" class="form-control">
+                                        <option value="None">Ninguno</option>
+                                        {% for taste in tastes %}
+                                            <option value="{{taste}}">{{taste}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-0">Kind</p>
+                                    <select name="kind" class="form-control">
+                                        <option value="None">Ninguno</option>
+                                        {% for kind in kinds %}
+                                            <option value="{{kind}}">{{kind}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <p class="mb-0">Style</p>
+                                    <select name="style" class="form-control">
+                                        <option value="None">Ninguno</option>
+                                        {% for style in styles %}
+                                            <option value="{{style}}">{{style}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col">
-                                <p class="mb-0">Style</p>
-                                <select class="form-control">
-                                    <option>Default select</option>
-                                </select>
-                            </div>
-                            <div class="col">
-                                <p class="mb-0">Kind</p>
-                                <select class="form-control">
-                                    <option>Default select</option>
-                                </select>
-                            </div>
-                        </div>
+                            <button type="submit" value="submit" class="btn btn-primary">Filter</button>
+                        </form>
                     </div>
                     <div class="row row-cols-3">
                         {% for meal in basicRecomend %}
