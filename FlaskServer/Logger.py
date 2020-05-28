@@ -22,11 +22,11 @@ def login():
         else:
             flash(f"Sesion iniciada correctamente, Hola {serialize_user(result[0]).get('name')}!")
             session["user"] = serialize_user(result[0])
-            return redirect(url_for("logger.user"))
+            return redirect(url_for("recomendations.my_recomendations"))
     else:
         if "user" in session:
             flash("La sesion ya esta iniciada")
-            return redirect(url_for("logger.user"))
+            return redirect(url_for("recomendations.my_recomendations"))
         return render_template("login.html")
 
 @logger.route("/register", methods=["POST", "GET"])
@@ -41,23 +41,14 @@ def register():
         if result:
             session["user"] = user
             flash(f"Bienvenido a la experiencia {user.get('name')}", "info")
-            return redirect(url_for("logger.user"))
+            return redirect(url_for("recomendations.my_recomendations"))
         else:
             flash("ocurrio un error")
     else:
         if "user" in session:
             flash("La sesion ya esta iniciada")
-            return redirect(url_for("logger.user"))
+            return redirect(url_for("recomendations.my_recomendations"))
         return render_template("register.html")
-
-@logger.route("/user")
-def user():
-    if "user" in session:
-        user = serialize_user(session["user"])
-        return render_template("user.html", user=user)
-    else:
-        flash("Inicia sesion primero")
-        return redirect(url_for("logger.login"))
 
 @logger.route("/logout")
 def logout():

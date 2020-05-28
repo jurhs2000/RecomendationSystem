@@ -11,7 +11,7 @@
 
 <body>
     <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
-        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-brand" href="{{ url_for('get_home') }}">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('recomendations.my_recomendations') }}">My Recomendations<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('ingredients.add_get_ingredients') }}">Ingredients<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('meals.add_get_meals') }}">Meals<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('logger.login') }}">Login<span class="sr-only"></span></a>

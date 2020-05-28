@@ -11,3 +11,13 @@
     background-color: royalblue;
     border-color: royalblue;
 }
+
+.card {
+    width: 100% !important;
+}
+
+.jumbotron {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
