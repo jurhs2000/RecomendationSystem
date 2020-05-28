@@ -9,4 +9,9 @@ def add_get_ingredients():
     if request.method == "POST":
         return render_template("ingredients.html")
     else:
-        return render_template("ingredients.html")
+        ingList = []
+        db = get_db()
+        results = db.run("MATCH (n:INGREDIENTS) RETURN n LIMIT 25")
+        for record in results:
+            ingList.append(serialize_ingredient(record[0]))
+        return render_template("ingredients.html", ingList=ingList)
