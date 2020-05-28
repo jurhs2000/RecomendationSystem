@@ -21,23 +21,6 @@ def serialize_meal(meal):
         "ingredients": [],
         "kinds": [],
         "styles": [],
-        "tastes": []
-    }
-
-def serialize_movie(movie):
-    return {
-        'id': movie['id'],
-        'title': movie['title'],
-        'summary': movie['summary'],
-        'released': movie['released'],
-        'duration': movie['duration'],
-        'rated': movie['rated'],
-        'tagline': movie['tagline']
-    }
-
-def serialize_cast(cast):
-    return {
-        'name': cast[0],
-        'job': cast[1],
-        'role': cast[2]
+        "tastes": [],
+        "coincidence": 0.0
     }
