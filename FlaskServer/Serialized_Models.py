@@ -16,7 +16,11 @@ def serialize_meal(meal):
         "name": meal.get("name"),
         "tags": meal.get("tags"),
         "time": meal.get("time"),
-        "rate": meal.get("rate")
+        "rate": meal.get("rate"),
+        "ingredients": [],
+        "kinds": [],
+        "styles": [],
+        "tastes": []
     }
 
 def serialize_movie(movie):

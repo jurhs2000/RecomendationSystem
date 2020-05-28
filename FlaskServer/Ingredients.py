@@ -11,7 +11,7 @@ def add_get_ingredients():
     else:
         ingList = []
         db = get_db()
-        results = db.run("MATCH (n:INGREDIENTS) RETURN n LIMIT 25")
+        results = db.run("MATCH (n:INGREDIENTS) RETURN n LIMIT 100")
         for record in results:
             ingList.append(serialize_ingredient(record[0]))
         return render_template("ingredients.html", ingList=ingList)

@@ -57,11 +57,43 @@
             </div>
             <div class="container ingredients-full-cont">
                 <ul class="list-group">
-                    <li class="list-group-item active">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item active">All meals</li>
+                    {% for meal in mealsList %}
+                        <li class="list-group-item">
+                            <h4>{{meal.get('name')}}</h4>
+                            <p class="m-0">
+                                {% for ing in meal.get('ingredients') %}
+                                    {{ing.get('name')}},
+                                {% endfor %}
+                            </p>
+                            <p class="m-0">
+                                {% for taste in meal.get('tastes') %}
+                                    {{taste}},
+                                {% endfor %}
+                            </p>
+                            <p class="m-0">
+                                {% for kind in meal.get('kinds') %}
+                                    {{kind}},
+                                {% endfor %}
+                            </p>
+                            <p class="m-0">
+                                {% for style in meal.get('styles') %}
+                                    {{style}},
+                                {% endfor %}
+                            </p>
+                            <p>
+                                {% if not meal.get('tags') == None%}
+                                    {{meal.get('tags')}}
+                                {% endif %}
+                                {% if not meal.get('time') == None%}
+                                    {{meal.get('time')}}
+                                {% endif %}
+                                {% if not meal.get('rate') == None%}
+                                    {{meal.get('rate')}}
+                                {% endif %}
+                            </p>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
