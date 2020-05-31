@@ -17,15 +17,15 @@ def login():
                         "RETURN user", {"username": user.get("username"), "password": user.get("password")})
         result = results.single()
         if result == None:
-            flash("No se ha podido iniciar sesion")
+            flash("No se ha podido iniciar sesión")
             return redirect(url_for("logger.login"))
         else:
-            flash(f"Sesion iniciada correctamente, Hola {serialize_user(result[0]).get('name')}!")
+            flash(f"Sesión iniciada correctamente, Hola {serialize_user(result[0]).get('name')}!")
             session["user"] = serialize_user(result[0])
             return redirect(url_for("recomendations.my_recomendations"))
     else:
         if "user" in session:
-            flash("La sesion ya esta iniciada")
+            flash("La sesión ya está iniciada")
             return redirect(url_for("recomendations.my_recomendations"))
         return render_template("login.html")
 
@@ -43,10 +43,10 @@ def register():
             flash(f"Bienvenido a la experiencia {user.get('name')}", "info")
             return redirect(url_for("recomendations.my_recomendations"))
         else:
-            flash("ocurrio un error")
+            flash("ocurrió un error")
     else:
         if "user" in session:
-            flash("La sesion ya esta iniciada")
+            flash("La sesión ya está iniciada")
             return redirect(url_for("recomendations.my_recomendations"))
         return render_template("register.html")
 
@@ -54,6 +54,6 @@ def register():
 def logout():
     if "user" in session:
         user = session["user"]
-        flash(f"Sesion cerrada correctamente. Nos vemos pronto {user.get('name')}", "info")
+        flash(f"Sesión cerrada correctamente. Nos vemos pronto {user.get('name')}", "info")
     session.pop("user", None)
     return redirect(url_for("logger.login"))

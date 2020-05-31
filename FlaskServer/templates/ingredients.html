@@ -15,7 +15,7 @@
         <div class="col-sm">
             <div class="container">
                 <h4>Add Ingredients</h4>
-                <form action="#" method="POST">
+                <form action="{{ url_for('ingredients.add_ingredient') }}" method="POST">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
                         <input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" required>
@@ -31,7 +31,7 @@
         <div class="col col-lg-8">
             <div class="container">
                 <h4>Search for ingredients</h4>
-                <form action="#" method="POST">
+                <form action="{{ url_for('ingredients.filter_ingredient') }}" method="POST">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
                         <input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
@@ -50,7 +50,7 @@
                         <li class="list-group-item">
                             <h5 style="display: inline;">{{ing.get('name')}}</h5>
                             {% if not ing.get('tags') == None%}
-                                {{ing.get('tags')}}
+                                <p>{{ing.get('tags')}}</p>
                             {% endif %}
                         {% if isLogged %}
                             <form action="{{ url_for('ingredients.add_to_user') }}" method="POST" style="display: inline;">

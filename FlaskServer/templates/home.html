@@ -2,10 +2,15 @@
 {% block title %}Bienvenido al Sistema de Recomendacion de recetas{% endblock %}
 {% block content %}
 <div class="jumbotron">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <h1 class="display-4">Sistema de Recomendación de Recetas</h1>
+    <p class="lead">Sistema utilizando el lenguaje Python, con el framework Flask y Neo4j como base de datos basada en grafos.</p>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p style="width: 70%; text-align: justify;">Este sistema tiene como propósito resolver la problemática principal de recomendar recetas,basadas en los ingredientes que
+        posee un usuario, mostrando así, recetas que puedes cocinar y el porcentaje de ingredientes que tienes de esa receeta. Además
+        puedes filtrar según el sabor, tipo de comida o método de preparación, para obtener recomendaciones a tu gusto.
+    </p><p>
+        Proyecto en proceso de mejora.
+    </p>
     <a class="btn btn-primary btn-lg" href="{{ url_for('recomendations.my_recomendations') }}" role="button">Empezar</a>
 </div>
 {% endblock %}

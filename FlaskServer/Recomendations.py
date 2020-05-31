@@ -23,7 +23,7 @@ def my_recomendations():
         return render_template("recomendations.html", user=user, myIngredients=myIngredients,
                                 basicRecomend=basicRecomend, tastes=tastes, kinds=kinds, styles=styles)
     else:
-        flash("Inicia sesion primero")
+        flash("Inicia sesión primero")
         return redirect(url_for("logger.login"))
 
 @recomendations.route("/remove_ingredient", methods=["POST"])
@@ -47,13 +47,13 @@ def filter():
     style = request.form["style"]
     if not taste == "None":
         isFilter = True
-        flash(f"Filtrado por sabor {taste}")
+        flash(f"Filtrado por sabor: {taste}")
     if not kind == "None":
         isFilter = True
-        flash(f"Filtrado por tipo {kind}")
+        flash(f"Filtrado por tipo: {kind}")
     if not style == "None":
         isFilter = True
-        flash(f"Filtrado por metodo {style}")
+        flash(f"Filtrado por metodo: {style}")
     if (taste == "None") & (kind == "None") & (style == "None"):
         isFilter = False
     return redirect(url_for("recomendations.my_recomendations"))
