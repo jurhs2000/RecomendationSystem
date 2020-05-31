@@ -8,7 +8,6 @@ from neo4j import GraphDatabase
 
 # Python - neo4j connection is available
 db = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "uvg123"),encrypted=False)
-session = db.session()
 
 # Taste label and nodes are created
 a =  "CREATE (SPICY:TASTE{name:'Spicy'}),(SALTY:TASTE{name:'Salty'}),(SWEET:TASTE{name:'Sweet'}),"
@@ -179,6 +178,10 @@ a += "(SUSHI)-[A26:IS_A]->(MAINCOURSE),(SALMON)-[B26:IS_USED_IN]->(SUSHI),(TOMAT
 a += "(SUSHI)-[D26:TASTE]->(SALTY)"
 
 engine = a
-session.run(engine)
+
+with db.session() as session:
+    result = session.run(engine)
+    if result:
+        print("Se agregaron los datos a la base de datos!")
 
 db.close()
